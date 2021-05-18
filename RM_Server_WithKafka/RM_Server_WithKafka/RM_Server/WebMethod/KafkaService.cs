@@ -22,6 +22,7 @@ namespace RM_Server_WithKafka.RM_Server.WebMethod
         /// </summary>
         public async static Task InvokeService()
         {
+            Console.WriteLine("Service started");
             string requestTopic = ServiceTopics.RequestTopic;            
             Uri uri = new Uri("http://localhost:9092");
             var requestOptions = new KafkaOptions(uri);
