@@ -1,0 +1,70 @@
+﻿@model IEnumerable<RM_WithKafka.Models.ResourceWithValue>
+
+<p>
+    @Html.ActionLink("Add New Resource", "AddResource")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationValue.X)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationValue.Y)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationValue.Z)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationValue.Rotation)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationValue.X)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationValue.Y)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationValue.Z)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationValue.Rotation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditResourceDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteResource", new { id = item.Id }, new { onclick = "return confirm('Are sure wants to delete?');" })
+            </td>
+        </tr>
+    }
+
+</table>
